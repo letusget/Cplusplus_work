@@ -1,11 +1,12 @@
 #include "Random.h"
 
-void Guess(CRandom& hRandom);
+void Guess(CRandom& hRandom);  //猜测函数
+
 int main()
 {
-	while (1)
+	while (1)  //使用while循环可以一直运行，知道循环内部退出循环
 	{
-		CRandom Rand(10,10);
+		CRandom Rand(10,10);  //默认构造函数，确定默认值
 		
 
 		//打印游戏界面
@@ -18,6 +19,7 @@ int main()
 		Guess(Rand);
 		cout << "========================================" << endl;
 		cout << "输入数字0退出游戏,输入其他数字继续游戏"<<endl;
+		cout << "请输入：>>";
 		int end;
 		cin >> end;
 		if (end==0)
@@ -28,15 +30,14 @@ int main()
 		else
 		{
 			cout << "新游戏开始！" << endl;
+			cout << endl;
+			cout << endl;
 			
 		}
-
 
 	}
 	//Guess(Rand);
 	
-	
-
 	return 0;
 }
 
@@ -44,14 +45,14 @@ int getPrint()  //从键盘获取输入的数字
 {
 	int num = 0;
 	cout << endl;
-	cout << "请输入一个整数 （范围：0-9） ：";
+	cout << "请输入您猜测的整数 （范围：0-9） ：";
 	cin >> num;
 	cout << endl;
 
 	while (num < 0 || num>9)
 	{
 		cout << "输入数字错误（0-9），请重新输入：";
-		cin >> num;
+		cin >> num;  //防止输入错误，知道输入正确才可以退出循环
 		cout << endl;
 	}
 	cout << "您输入的为：" << num << endl;
@@ -64,11 +65,11 @@ void Guess(CRandom& hRandom)
 	int num=getPrint();
 
 	int result=hRandom.Judge(num);  //判断结果的返回值
-	while (result)  //知道语句内退出，才可以退出程序
+	while (result)  //直到语句内退出，才可以退出程序
 	{
 		switch (result)
 		{
-		default:
+		default:  //出现错误的情形
 			cout << "Error!!!" << endl;
 			break;
 		case 1:
@@ -83,15 +84,17 @@ void Guess(CRandom& hRandom)
 			cout << "Sorry, too small, remaining: "<< hRandom.getCount();
 			cout << endl;
 			break;
+
 		case 3:
 			cout << "Sorry, too large, remaining: "<<hRandom.getCount();
 			cout << endl;
 			break;
+
 		case 4:
 			cout << "Sorry, exhausted, value: "<<hRandom.getCount();
 			cout << endl;
 			return;
-			//猜测次数用完，退出循环
+			//猜测次数用完，退出循环,回到主函数
 			break;
 
 		}
