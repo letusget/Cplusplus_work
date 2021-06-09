@@ -22,6 +22,7 @@ public:
 	void psz_Find(char *id);  //查找产品信息
 	//void psz_Print(char *id);
 
+	//打印输出
 	void print_nld(long nld);
 
 	void print_pszUpc(char * pszUpc);

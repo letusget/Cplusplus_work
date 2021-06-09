@@ -17,7 +17,7 @@ CCommodity::CCommodity(long m_nld,
 }
 CCommodity::CCommodity()
 {
-
+	//默认构造函数调用
 }
 
 void CCommodity::showmenu()
