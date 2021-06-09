@@ -10,7 +10,7 @@ public:
 	{
 		if (m_pInstance==NULL)
 		{
-			m_pInstance = new CHanoi;
+			m_pInstance = new CHanoi;  //如果不存在该类，就创建该类，如果存在就返回该类
 		}
 		return m_pInstance;
 	}
@@ -45,7 +45,7 @@ void CHanoi::Move(int n, char source, char station, char target)
 
 void CHanoi::Show(int n, char source, char target)
 {
-	cout << "#" << n << source << "->" << target << endl;
+	cout << "#" << n <<":" << source << "->" << target << endl;
 }
 
 

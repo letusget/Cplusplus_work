@@ -23,7 +23,7 @@ int main()
 	int num;
 	while (1)
 	{
-		//caesar.menu();
+		
 		CCaesar::menu();
 		cout << endl;
 		cout << "请输入你要实现的功能：";
@@ -81,7 +81,6 @@ int main()
 		
 
 	}
-
 	CCaesar::deleteCaesar();  //调用析构函数
 
 
